@@ -69,6 +69,9 @@ for (let i = 0; i < teamMembers.length; i++) {
       </div>
     </div>
   `;
+
+  // unisci il contenunto di testo al cardsContainer  
+  cardsContainer.innerHTML += cardMember;
 }
 
 
