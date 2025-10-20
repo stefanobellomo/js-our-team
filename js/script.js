@@ -47,7 +47,7 @@ const teamMembers = [
   }
 ];
 
-
+/*
 // Recupero i nodi della dom che ci servono
 const formEl = document.getElementById('addMember')
 const nameField = document.getElementById('nameField')
@@ -70,6 +70,7 @@ formEl.addEventListener('submit', (e) => {
   roleField.value = ''
   imageField.value = ''
 })
+*/
 
 // Recupera il nodo team-container
 const cardsContainer = document.getElementById('cardContainer')
@@ -82,14 +83,16 @@ for (let i = 0; i < teamMembers.length; i++) {
   const thisMember = teamMembers[i];
 
   // crea la carta di ogni membro del team
-  const cardMember = 
-  `
-    <div class="card text-center shadow">
-      <img src="${thisMember.img}" class="card-img-top" alt="${thisMember.name}">
-      <div class="card-body">
-        <h5 class="card-title">${thisMember.name}</h5>
-        <p class="card-text text-muted">${thisMember.role}</p>
-        <a href="mailto:${thisMember.email}" class="btn btn-primary btn-sm">${thisMember.email}</a>
+  const cardMember =
+    `
+    <div class="shadow">
+    <div class="card-body d-flex align-items-center bg-dark">
+    <img src="${thisMember.img}" class="" alt="${thisMember.name}">
+         <div class="ms-3 d-flex flex-column mx-3">
+      <h5 class="card-title font-weight-bold text-white">${thisMember.name}</h5>
+      <p class="card-text text-white mb-2">${thisMember.role}</p>
+      <a href="mailto:${thisMember.email}" class="btn btn-primary btn-sm">${thisMember.email}</a>
+    </div>
       </div>
     </div>
   `;
