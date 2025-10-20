@@ -1,3 +1,13 @@
+/*
+**Traccia**
+-Dato un array di oggetti rappresentante un team di un’azienda, creare una pagina dedicata  in cui mostrare una card per ciascun componente.
+
+**Bonus**
+-Rendere l’esercizio responsive, mandando a capo le card
+-Aggiungere un form di agginta membri che permetta di visualizzare il nuovo membro sulla pagina
+*/
+
+
 const teamMembers = [
   {
     name: "Marco Bianchi",
@@ -36,3 +46,31 @@ const teamMembers = [
     img: "img/female3.png"
   }
 ];
+
+// Recupera il nodo team-container
+const teamContainer = document.getElementById('team-container')
+// svuoto il contenuto dell'html per poterlo poi riempire con i vari risultati
+cardContainer.innerHTML = ''
+
+// recupera con un ciclo for tutti i dati del team e crea la carta di ogni membro del team e poi unisci il contenunto di testo al cardContainer
+for (let i = 0; i < teamMembers.length; i++) {
+  const thisMember = teamMembers[i];
+
+  const cardMember = 
+  `
+    <div class="card text-center shadow">
+      <img src="${thisMember.img}" class="card-img-top" alt="${thisMember.name}">
+      <div class="card-body">
+        <h5 class="card-title">${thisMember.name}</h5>
+        <p class="card-text text-muted">${thisMember.role}</p>
+        <a href="mailto:${thisMember.email}" class="btn btn-primary btn-sm">${thisMember.email}</a>
+      </div>
+    </div>
+  `;
+
+  cardContainer.innerHTML += cardMember;
+}
+
+
+
+
