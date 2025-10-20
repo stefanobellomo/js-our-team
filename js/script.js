@@ -56,6 +56,19 @@ cardsContainer.innerHTML = ''
 // recupera con un ciclo for tutti i dati del team
 for (let i = 0; i < teamMembers.length; i++) {
   const thisMember = teamMembers[i];
+
+  // crea la carta di ogni membro del team
+  const cardMember = 
+  `
+    <div class="card text-center shadow">
+      <img src="${thisMember.img}" class="card-img-top" alt="${thisMember.name}">
+      <div class="card-body">
+        <h5 class="card-title">${thisMember.name}</h5>
+        <p class="card-text text-muted">${thisMember.role}</p>
+        <a href="mailto:${thisMember.email}" class="btn btn-primary btn-sm">${thisMember.email}</a>
+      </div>
+    </div>
+  `;
 }
 
 
