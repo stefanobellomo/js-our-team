@@ -75,4 +75,17 @@ for (let i = 0; i < teamMembers.length; i++) {
 }
 
 
+// Recupero i nodi della dom che ci servono
+const formEl = document.getElementById('addMember')
+const nameField = document.getElementById('nameField')
+const roleField = document.getElementById('roleField')
+const imageField = document.getElementById('imageField')
+const buttonEl = document.getElementById('buttonEl')
+
+
+
+
+
+
+
 
