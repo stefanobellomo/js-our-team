@@ -47,6 +47,30 @@ const teamMembers = [
   }
 ];
 
+
+// Recupero i nodi della dom che ci servono
+const formEl = document.getElementById('addMember')
+const nameField = document.getElementById('nameField')
+const roleField = document.getElementById('roleField')
+const imageField = document.getElementById('imageField')
+
+formEl.addEventListener('submit', (e) => {
+  e.preventDefault();
+  
+  const newMember = {
+    name: nameField.value,
+    role: roleField.value,
+    img: imageField.value
+  }
+
+  teamMembers.push(newMember)
+
+  // reset dei campi
+  nameField.value = ''
+  roleField.value = ''
+  imageField.value = ''
+})
+
 // Recupera il nodo team-container
 const cardsContainer = document.getElementById('cardContainer')
 
@@ -73,15 +97,6 @@ for (let i = 0; i < teamMembers.length; i++) {
   // unisci il contenunto di testo al cardsContainer  
   cardsContainer.innerHTML += cardMember;
 }
-
-
-// Recupero i nodi della dom che ci servono
-const formEl = document.getElementById('addMember')
-const nameField = document.getElementById('nameField')
-const roleField = document.getElementById('roleField')
-const imageField = document.getElementById('imageField')
-const buttonEl = document.getElementById('buttonEl')
-
 
 
 
